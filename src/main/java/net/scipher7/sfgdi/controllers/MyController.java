@@ -1,12 +1,18 @@
 package net.scipher7.sfgdi.controllers;
 
+import net.scipher7.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-  public String doSomething() {
-    System.out.println("Hello there!");
-    return "I am doing something!";
+  private final GreetingService greetingService;
+
+  public MyController(GreetingService greetingService) {
+    this.greetingService = greetingService;
+  }
+
+  public String sayHello() {
+   return greetingService.sayGreeting();
   }
 }

@@ -1,8 +1,6 @@
 package net.scipher7.sfgdi.controllers;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import net.scipher7.sfgdi.services.GreetingServiceImpl;
+import net.scipher7.sfgdi.services.ConstructorInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +11,7 @@ class PropertyInjectedControllerTest {
   @BeforeEach
   void setUp() {
     controller = new PropertyInjectedController();
-    controller.greetingService = new GreetingServiceImpl();
+    controller.greetingService = new ConstructorInjectedGreetingService();
   }
 
   @Test

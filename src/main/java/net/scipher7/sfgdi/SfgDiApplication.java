@@ -1,6 +1,7 @@
 package net.scipher7.sfgdi;
 
 import net.scipher7.sfgdi.controllers.ConstructorInjectedController;
+import net.scipher7.sfgdi.controllers.I18nController;
 import net.scipher7.sfgdi.controllers.MyController;
 import net.scipher7.sfgdi.controllers.PropertyInjectedController;
 import net.scipher7.sfgdi.controllers.SetterInjectedController;
@@ -13,6 +14,10 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		System.out.println("---I18N Greeting");
+		I18nController i18nController = (I18nController)ctx.getBean("i18nController");
+		System.out.println(i18nController.sayGreeting());
 
 		System.out.println("---Priamry Bean");
 		MyController myController = (MyController) ctx.getBean("myController");
